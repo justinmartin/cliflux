@@ -23,6 +23,13 @@
           version = "v1.4.4";
           src = ./.;
           cargoHash = "sha256-TtK1hN1RNusVWxWVTity+N1cpfauhfeQpkqAOI1fIco=";
+           PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  OPENSSL_NO_VENDOR = 1;
+  nativeBuildInputs = with pkgs; [
+    pkg-config
+    openssl
+    openssl.dev
+  ];
         };
       }
     );
